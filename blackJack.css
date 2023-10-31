@@ -82,6 +82,7 @@ nav ul {
 
 
 #game-dropdown-content{
+
     display:none;
     position: absolute;
     background-color: gray;
@@ -96,9 +97,8 @@ nav ul {
 
 
 li:hover #game-dropdown-content {
+
     display: block;
-    
-    
 }
 
 .game-item a:hover {
