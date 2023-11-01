@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon" href="./image/smallLogo1.png" type="image/x-icon" />
+    <title>Mini Games</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="stylesheet" type="text/css" href="./css/tictac.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img class="logo" src="./image/logo1.png" />
+            <nav>
+                <ul>
+                    <li class="nav-item"><a href="index.html">Home</a></li>
+                    <li class="nav-item">
+                        <a href="#">Games</a>
+                        <ul id="game-dropdown-content">
+                            <li class="game-item"><a href="numbetGuess.html">Number Guesser</a></li>
+                            <li class="game-item"><a href="tictac.html">Tic Tac Toe</a></li>
+                            <li class="game-item"><a href="hangMan.html">hangman</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a href="#">Contact</a></li>
+                    <li class="nav-item"><a href="#">Login</a></li>
+                    <li class="nav-item"><a href="#">Leaderboard</a></li>
+                </ul>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <button>Search</button>
+            </div>
+
+        </header>
+
+        <main>
+            <section class="gameDisplay1">
+                <!-- The main board of the tic tac toe game! -->
+                <div class="container1">
+
+                <table>
+                    <tr>
+                      <td id="cell00"></td>
+                      <td id="cell01"></td>
+                      <td id="cell02"></td>
+                    </tr>
+                    <tr>
+                      <td id="cell10"></td>
+                      <td id="cell11"></td>
+                      <td id="cell12"></td>
+                    </tr>
+                    <tr>
+                      <td id="cell20"></td>
+                      <td id="cell21"></td>
+                      <td id="cell22"></td>
+                    </tr>
+                  </table>
+
+                  <!-- The button button to start a new game -->
+                  <button id="new-game" class="newGame-button">New Game!</button>
+
+                  <p id="winner-label"></p>
+                  </div>
+
+
+                <!-- Div that contains the buttons for choosing the category 
+                     of the target word -->
+                <div id="categories" class="categories hide"></div>
+                
+                <div id="buttons"></div>
+            </section>
+        </main>
+
+        <footer class="foot">
+            <p> Mini-Games Portal &copy; 2023</p>
+        </footer>
+    </div>
+</body>
+<script src="./js/tictac.js"></script>
+</html>
