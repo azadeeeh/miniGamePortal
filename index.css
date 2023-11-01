@@ -137,7 +137,13 @@ article {
     box-sizing: border-box; 
     text-align: center;
     height: 500px;
+    transition: transform 0.2s, filter 0.2s; /* making the change on hover smooth */
     
+}
+
+article:hover {
+    transform: scale(1.06); /* move up the article slightly on hover */
+    filter: brightness(1.5); /* Brighten the article on hover */
 }
 
 article img {
@@ -153,6 +159,8 @@ article img {
     display: flex;
     width: 1000px;
 }
+
+
 
 
 
