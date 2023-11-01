@@ -1,5 +1,9 @@
 /* General styles */
 
+
+
+
+
 html,body {
     font-family: Arial, sans-serif;
     background-color: darkgray;
@@ -13,7 +17,8 @@ html,body {
 
 .container {
 
-    width:100%;
+
+    width: 100%;
     /*max-width: 1500px; /* Adjust the maximum width as needed */
     margin: 0 auto; /* Center the container horizontally */
     flex:1;
@@ -34,8 +39,6 @@ header {
     height: 60px;
     border-radius: 10px;
     
-    overflow: hidden;
-    
 }
 
 header a {
@@ -44,6 +47,7 @@ header a {
 }
 
 .logo {
+    
     padding: 10px; 
     width: 210px; 
     min-width: 100px;
@@ -78,6 +82,7 @@ nav ul {
 
 
 #game-dropdown-content{
+
     display:none;
     position: absolute;
     background-color: gray;
@@ -92,9 +97,8 @@ nav ul {
 
 
 li:hover #game-dropdown-content {
+
     display: block;
-    
-    
 }
 
 .game-item a:hover {
@@ -105,61 +109,8 @@ li:hover #game-dropdown-content {
 
 main{
     height: 100%;
+    width: 100%;
 }
-
-.gameDisplay{
-
-    display:flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top:50px;
-    margin-bottom: 50px;
-}
-
-.gameDisplay p{
-    font-weight: bold;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 16px;
-    min-width: 400px;
-    
-}
-
-article {
-    width: 50%;
-    padding: 10px;
-    margin: 10px;
-    border: 3px solid black;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: column; 
-    justify-content: center;
-    align-items: center;   
-    box-sizing: border-box; 
-    text-align: center;
-    height: 500px;
-    transition: transform 0.2s, filter 0.2s; /* making the change on hover smooth */
-    
-}
-
-article:hover {
-    transform: scale(1.06); /* move up the article slightly on hover */
-    filter: brightness(1.5); /* Brighten the article on hover */
-}
-
-article img {
-    max-width: 80%; 
-    height: auto;  
-    border-radius: 50%;
-    padding:20px;
-    margin: auto;
-    
-}
-
-.row{
-    display: flex;
-    width: 1000px;
-}
-
 
 
 .foot {
@@ -174,10 +125,4 @@ article img {
 
 .foot p{
     padding: 20px;
-}
-
-@media (max-width: 600px) {
-    .gameDisplay {
-        flex-direction: column;
-    }
 }
