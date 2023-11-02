@@ -87,7 +87,6 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (result > 0 && result < 21) {
             addition(result);
             userInput.value = "";
-            outputContainer.innerHTML = ""; 
             outputContainer.innerHTML="add another number";
             checkGame();
            
