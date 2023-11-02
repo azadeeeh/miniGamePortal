@@ -1,9 +1,5 @@
 /* General styles */
 
-
-
-
-
 html,body {
     font-family: Arial, sans-serif;
     background-color: darkgray;
@@ -11,7 +7,9 @@ html,body {
     height:100%;
     display: flex;
     flex-direction: column;
-    flex:1;
+    overflow: hidden;
+    
+
     
 }
 
@@ -20,7 +18,7 @@ html,body {
 
     width: 100%;
     /*max-width: 1500px; /* Adjust the maximum width as needed */
-    margin: 0 auto; /* Center the container horizontally */
+    /*margin: 0 auto; /* Center the container horizontally */
     flex:1;
     
 }
@@ -38,6 +36,7 @@ header {
     width: 100%;
     height: 60px;
     border-radius: 10px;
+    overflow: hidden;
     
 }
 
@@ -55,8 +54,6 @@ header a {
     min-width: 100px;
     border-radius: 300px;
 }
-
-
 
 nav{
     text-align: center;
@@ -78,8 +75,6 @@ nav ul {
 .nav-item :hover {
     color:#FF5721;
 }
-
-
 
 #game-dropdown-content{
 
@@ -107,22 +102,120 @@ li:hover #game-dropdown-content {
 
 
 
-main{
-    height: 100%;
-    width: 100%;
+.gameDisplay{
+    flex:1;
+    overflow: hidden;
+    padding: 90px;
+    border: 3px solid black;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;   
+    box-sizing: border-box; 
+    text-align: center;
+    height: 400px;
+    width:400px;
+    transition: transform 0.2s, filter 0.2s; /* making the change on hover smooth */
+    margin: auto;
+    margin-top: 100px;
+    
+}
+
+.gameDisplay p{
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    min-width: 400px;
+    
+}
+
+.gameDisplay:hover {
+    transform: scale(1.06); /* move up the article slightly on hover */
+    filter: brightness(1.5); /* Brighten the article on hover */
+}
+
+
+
+.ask{
+    font-family: cursive;
+    text-align: center;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    padding: 30px;
+    color:black;
+    font-weight: bold;
+    font-size: 30px;
+    
+}
+
+#userInput{
+    background-color: darkgray;
+    margin: 20px;
+    padding: 5px;
+    border : 2px solid gray;
+    
+}
+
+#userInput:focus {
+    border: 2px solid #FF5721;
+    background-color: darkgray;
+    
+    
+}
+
+
+#addNumber {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: rgb(61, 69, 78);
+    color: #fff; /* Text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    
+
+}
+
+#addNumber:hover {
+    background-color: #FF5721;
+}
+
+#outputContainer{
+    margin: auto;
+    text-align: center;
+    font-size: 30px;;
+   
+}
+
+#startOver{
+    margin-top: 20px;
+    
 }
 
 
 .foot {
     background: radial-gradient(circle,rgb(61, 69, 78),  rgb(84, 90, 96));
     text-align: center;
+    justify-content: center;
     color:#FF5721;
-    width:100%;
     height: 60px;
     border-radius: 10px;
+    position:fixed;
+    bottom:0;
+    width:100%;
+    
     
 }
 
 .foot p{
-    padding: 20px;
+    padding-bottom: 20px;
+    
 }
