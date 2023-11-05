@@ -104,8 +104,8 @@ function updateScoresInUI() {
 }
 
 function addKeyBoardAndEmptySpaces() {
-    console.log(chosenWord)
-    console.log(chosenWord.length)
+    // console.log(chosenWord)
+    // console.log(chosenWord.length)
     htmlCodeForEmptyChars = ""
     for (let index = 0; index < chosenWord.length; index++) {
         const element = chosenWord[index];
@@ -211,7 +211,7 @@ keyboardPressedEventListener = e => {
 
     // Wrong guess!
     if (listOfOccurances === -1) {
-        console.log('wrrrrooonnngggg  . . . :D');
+        // console.log('wrrrrooonnngggg  . . . :D');
         addClassToLi('keyboard-buttons-disabled');
         removeEventListeners();
         chancesForGuessing -= 1;
