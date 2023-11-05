@@ -1,6 +1,5 @@
 //#region Inits and Global Vars ...
 let btnNewGameElem = document.getElementById("new-game")
-let divCategoriesElem = document.getElementById("categories")
 let divUICotnrols = document.getElementById("UI-Controls")
 
 const orderedElemsOfHanging =
@@ -27,6 +26,7 @@ const objWords = {
 
 const maxErrors = orderedElemsOfHanging.length
 let chancesForGuessing = maxErrors;
+let numOfCorrectGuesses = 0;
 let chosenWord = "";
 //#endregion
 
@@ -41,15 +41,18 @@ function HideHangman() {
 
 function InitNShowCategories() {
     // divCategoriesElem.innerText = "";
-    divUICotnrols.innerText = ""
+    divUICotnrols.innerText = "";
     ShowNHideElem(divUICotnrols, true);
+    divCategoriesElem = htmlCodeToElem("<div></div>");
+    divCategoriesElem.classList.add('categories');
     for (const [key, _] of Object.entries(objWords)) {
         buttonText = key;
         if (buttonText.includes("__")) buttonText = buttonText.replace("__", " ");
         buttonToAdd = htmlCodeToElem(`<a class="button categories-buttons z1shadow fade-in">${buttonText}</a>`);
         buttonToAdd.addEventListener("click", categorySelectionEventListener);
-        divUICotnrols.appendChild(buttonToAdd);
+        divCategoriesElem.appendChild(buttonToAdd);
     }
+    divUICotnrols.appendChild(divCategoriesElem);
 }
 
 function addKeyBoard() {
@@ -65,6 +68,32 @@ function addKeyBoard() {
     ulForKeyboard.appendChild(spaceButton);
 
     divUICotnrols.appendChild(ulForKeyboard);
+    addScoreMonitorer();
+}
+
+function addScoreMonitorer() {
+    scoreHolderElem = htmlCodeToElem("<p></p>");
+    scoreHolderElem.classList.add('Score-Holder');
+    scoreHolderElem.classList.add('fade-in');
+    divUICotnrols.appendChild(scoreHolderElem);
+    updateScoresInUI();
+}
+
+function updateScoresInUI() {
+
+    holderElem = document.getElementsByClassName('Score-Holder')[0];
+    holderElem.classList.remove('fade-in');
+    holderElem.innerHTML = "";
+
+    errorsElem = htmlCodeToElem(`<span>Errors = ${maxErrors - chancesForGuessing}, </span>`);
+    correctsElem = htmlCodeToElem(`<span>Corrects (?!) = ${numOfCorrectGuesses}, </span>`);
+    scoreElem = htmlCodeToElem(`<span>Score = ${numOfCorrectGuesses - (maxErrors - chancesForGuessing)}</span>`);
+
+    holderElem.appendChild(errorsElem);
+    holderElem.appendChild(correctsElem);
+    holderElem.appendChild(scoreElem);
+
+    divUICotnrols.append(holderElem);
 }
 
 function addKeyBoardAndEmptySpaces() {
@@ -120,12 +149,25 @@ keyboardPressedEventListener = e => {
         e.target.tagName === 'A' ? e.target.parentElement.classList.add(calssName) : e.target.classList.add(calssName);
     }
 
+    removeEventListeners = () => {
+        if (e.target.tagName === 'A') {
+            e.target.parentElement.replaceWith(e.target.parentElement.cloneNode(true));
+            e.target.replaceWith(e.target.cloneNode(true));
+        }
+        else {
+            e.target.replaceWith(e.target.cloneNode(true));
+        }
+    }
+
     // Wrong guess!
     if (listOfOccurances === -1) {
         console.log('wrrrrooonnngggg ... :D');
-        addClassToLi('keyboard-buttons-disabled')
+        addClassToLi('keyboard-buttons-disabled');
+        removeEventListeners();
         chancesForGuessing -= 1;
         orderedElemsOfHanging[maxErrors - chancesForGuessing - 1].classList.add('fade-in');
+        if (chancesForGuessing === 0)
+            console.log("Perform loosing ceremony ... ")
     }
 
     // Correct guess!
@@ -133,9 +175,15 @@ keyboardPressedEventListener = e => {
         emptyCharElems = document.getElementsByClassName('character-holder');
         for (let index = 0; index < listOfOccurances.length; index++) {
             emptyCharElems[listOfOccurances[index]].innerText = chosenCharachter.toUpperCase();
+            numOfCorrectGuesses++;
         }
         addClassToLi('keyboard-buttons-disabled')
+        removeEventListeners();
+        if (numOfCorrectGuesses === chosenWord.length)
+            console.log("Perform winning ceremony ... ")
     }
+
+    updateScoresInUI();
 }
 //#endregion Eevent Listeners
 
