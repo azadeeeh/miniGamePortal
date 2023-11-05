@@ -65,15 +65,24 @@ nav ul {
 }
 
 .nav-item {
+
     margin-right: 20px;
-    position: relative; 
+    position:relative;
+    
     
 }
 
-.nav-item :hover {
-    color:#FF5721;
+
+.nav-item :hover{
+    color: #FF5721; 
 }
 
+
+
+.selected {
+    background-color: #c87f67; 
+    border-radius: 5px;
+}
 
 
 #game-dropdown-content{
@@ -94,10 +103,6 @@ li:hover #game-dropdown-content {
     display: block;
     
     
-}
-
-.game-item a:hover {
-    color:#FF5721;
 }
 
 
@@ -155,14 +160,12 @@ article img {
     
 }
 
+
+
 .row{
     display: flex;
     width: 1000px;
 }
-
-
-
-
 
 .foot {
     background: radial-gradient(circle,rgb(61, 69, 78),  rgb(84, 90, 96));

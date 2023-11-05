@@ -8,11 +8,6 @@ let outputContainer = document.getElementById("outputContainer");
 let startOver = document.getElementById("startOver");
 
 
-
-
-
-
-
 //function to check validity of the input
 
 function validInput(input){
@@ -42,6 +37,7 @@ function addition(number){
     var random = Math.floor(Math.random()*(max-min+1))+min;
     total += random ;
     outputContainer.innerHTML="total is : " + total ;
+    startOver.innerText="enter a number from 1 to 5";
 }
 
 
