@@ -8,11 +8,6 @@ let outputContainer = document.getElementById("outputContainer");
 let startOver = document.getElementById("startOver");
 
 
-
-
-
-
-
 //function to check validity of the input
 
 function validInput(input){

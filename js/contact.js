@@ -1,6 +1,9 @@
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById('myForm');
     const thankYouMessage = document.getElementById('thankYouMessage');
+
+    
+  
   
     form.addEventListener('submit', function(event) {
       let valid = true;
