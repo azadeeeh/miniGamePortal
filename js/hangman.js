@@ -1,4 +1,4 @@
-// Global elements and vars
+//#region Inits and Global Vars ...
 let btnNewGameElem = document.getElementById("new-game")
 let divCategoriesElem = document.getElementById("categories")
 let divUICotnrols = document.getElementById("UI-Controls")
@@ -26,8 +26,10 @@ const objWords = {
 };
 
 const maxErrors = orderedElemsOfHanging.length
-let errorsCount = 0;
+let chancesForGuessing = maxErrors;
 let chosenWord = "";
+//#endregion
+
 //#region Functions
 
 //#region UI Manipulators
@@ -50,7 +52,6 @@ function InitNShowCategories() {
     }
 }
 
-
 function addKeyBoard() {
     ulForKeyboard = htmlCodeToElem('<ul id="keyboard"></ul>')
     for (let index = 65; index < 65 + 26; index++) {
@@ -58,11 +59,29 @@ function addKeyBoard() {
         keyboardButton.addEventListener('click', keyboardPressedEventListener);
         ulForKeyboard.appendChild(keyboardButton);
     }
-
-    spaceButton = htmlCodeToElem(`<li class="keyboard-buttons" style="width: 275px;"><a></a></li>\n`);
+    
+    spaceButton = htmlCodeToElem(`<li class="keyboard-buttons" style="width: 275px;"><a> </a></li>\n`);
+    spaceButton.addEventListener('click', keyboardPressedEventListener);
     ulForKeyboard.appendChild(spaceButton);
 
     divUICotnrols.appendChild(ulForKeyboard);
+}
+
+function addKeyBoardAndEmptySpaces() {
+    console.log(chosenWord)
+    console.log(chosenWord.length)
+    htmlCodeForEmptyChars = ""
+    for (let index = 0; index < chosenWord.length; index++) {
+        const element = chosenWord[index];
+        htmlCodeForEmptyChars += `<li class="character-holder">_</li>\n`;
+    }
+    htmlCodeForEmptyChars = '<ul class="characters-holder">' + htmlCodeForEmptyChars + "</ul>";
+
+    divUICotnrols.innerText = "";
+    elemToAdd = htmlCodeToElem(htmlCodeForEmptyChars);
+    divUICotnrols.appendChild(elemToAdd);
+
+    addKeyBoard()
 }
 //#endregion UI Manipulators
 
@@ -92,16 +111,34 @@ categorySelectionEventListener = e => {
 }
 
 keyboardPressedEventListener = e => {
+
     let chosenCharachter = e.target.innerText;
+    if(chosenCharachter === "") chosenCharachter = " ";
     listOfOccurances = chosenWord.allOccurances(chosenCharachter);
 
-    console.log(listOfOccurances);
+    addClassToLi = (calssName) => {
+        e.target.tagName === 'A' ? e.target.parentElement.classList.add(calssName) : e.target.classList.add(calssName);
+    }
+
+    // Wrong guess!
+    if (listOfOccurances === -1) {
+        console.log('wrrrrooonnngggg ... :D');
+        addClassToLi('keyboard-buttons-disabled')
+        chancesForGuessing -= 1;
+    }
+
+    // Correct guess!
+    else {
+        emptyCharElems = document.getElementsByClassName('character-holder');
+        for (let index = 0; index < listOfOccurances.length; index++) {
+            emptyCharElems[listOfOccurances[index]].innerText = chosenCharachter.toUpperCase();
+        }
+        addClassToLi('keyboard-buttons-disabled')
+    }
 }
-
-
 //#endregion Eevent Listeners
 
-//#endregion Functions
+//#region Extenstions
 Object.assign(String.prototype,
     {
         allOccurances(char2Search) {
@@ -111,7 +148,6 @@ Object.assign(String.prototype,
             if (copyOfThis.indexOf(char2Search) === -1) return -1;
 
             indexes[0] = copyOfThis.indexOf(char2Search);
-            // occurancesCounter = 1;
 
             while (indexes[indexes.length - 1] != -1) {
                 indexes[indexes.length] = copyOfThis.indexOf(char2Search, indexes[indexes.length - 1] + 1);
@@ -120,30 +156,16 @@ Object.assign(String.prototype,
             return indexes.slice(0, indexes.length - 1);
         }
     })
+//#endregion
+
+//#endregion Functions
+
 
 function InitUI() {
-
     newGameButton = htmlCodeToElem(`<a id="new-game" class="button z1shadow newGame-button fade-in">New Game!</a>`)
     newGameButton.addEventListener("click", StartANewGame);
     divUICotnrols.innerText = "";
     divUICotnrols.appendChild(newGameButton)
-}
-
-function addKeyBoardAndEmptySpaces() {
-    console.log(chosenWord)
-    console.log(chosenWord.length)
-    htmlCodeForEmptyChars = ""
-    for (let index = 0; index < chosenWord.length; index++) {
-        const element = chosenWord[index];
-        htmlCodeForEmptyChars += `<li class="character-holder">_</li>\n`;
-    }
-    htmlCodeForEmptyChars = '<ul class="characters-holder">' + htmlCodeForEmptyChars + "</ul>";
-
-    divUICotnrols.innerText = "";
-    elemToAdd = htmlCodeToElem(htmlCodeForEmptyChars);
-    divUICotnrols.appendChild(elemToAdd);
-
-    addKeyBoard()
 }
 
 function StartANewGame() {

@@ -114,15 +114,18 @@ line {
 }
 
 .character-holder {
-    position: relative;
+    /* position: relative; */
     list-style: none;
     margin: 0;
-    display: inline-block;
+    /* display: inline-block; */
     padding: 0 5px;
-    font-size: 2.5em;
+    font-size: 1.75em;
 }
+
 .characters-holder {
     padding: 0;
+    display: flex;
+    max-width: 250px;
     justify-content: center;
     align-items: center;
 }
@@ -147,6 +150,20 @@ line {
 {
     transition-duration: 250ms;
     background-color: rgb(23, 164, 1);
+}
+
+.keyboard-buttons-disabled
+{
+    transition-duration: 250ms;
+    background-color: rgba(23, 164, 1, 0);
+    opacity: 0.25;
+}
+
+.keyboard-buttons-disabled:hover
+{
+    background-color: rgba(23, 164, 1, 0);
+    opacity: 0.25;
+    cursor: default;
 }
 
 #keyboard
