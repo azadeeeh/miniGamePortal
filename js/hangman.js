@@ -49,6 +49,21 @@ function InitNShowCategories() {
         divUICotnrols.appendChild(buttonToAdd);
     }
 }
+
+
+function addKeyBoard() {
+    ulForKeyboard = htmlCodeToElem('<ul id="keyboard"></ul>')
+    for (let index = 65; index < 65 + 26; index++) {
+        keyboardButton = htmlCodeToElem(`<li class="keyboard-buttons"><a >${String.fromCharCode(index)}</a></li>\n`);
+        keyboardButton.addEventListener('click', keyboardPressedEventListener);
+        ulForKeyboard.appendChild(keyboardButton);
+    }
+
+    spaceButton = htmlCodeToElem(`<li class="keyboard-buttons" style="width: 275px;"><a></a></li>\n`);
+    ulForKeyboard.appendChild(spaceButton);
+
+    divUICotnrols.appendChild(ulForKeyboard);
+}
 //#endregion UI Manipulators
 
 //#region Utils
@@ -75,11 +90,39 @@ categorySelectionEventListener = e => {
     chosenWord = listOfWords[Math.floor(Math.random() * listOfWords.length)];
     addKeyBoardAndEmptySpaces();
 }
+
+keyboardPressedEventListener = e => {
+    let chosenCharachter = e.target.innerText;
+    listOfOccurances = chosenWord.allOccurances(chosenCharachter);
+
+    console.log(listOfOccurances);
+}
+
+
 //#endregion Eevent Listeners
 
 //#endregion Functions
+Object.assign(String.prototype,
+    {
+        allOccurances(char2Search) {
+            let indexes = [];
+            copyOfThis = this.toLowerCase();
+            char2Search = char2Search.toLowerCase();
+            if (copyOfThis.indexOf(char2Search) === -1) return -1;
+
+            indexes[0] = copyOfThis.indexOf(char2Search);
+            // occurancesCounter = 1;
+
+            while (indexes[indexes.length - 1] != -1) {
+                indexes[indexes.length] = copyOfThis.indexOf(char2Search, indexes[indexes.length - 1] + 1);
+            }
+
+            return indexes.slice(0, indexes.length - 1);
+        }
+    })
 
 function InitUI() {
+
     newGameButton = htmlCodeToElem(`<a id="new-game" class="button z1shadow newGame-button fade-in">New Game!</a>`)
     newGameButton.addEventListener("click", StartANewGame);
     divUICotnrols.innerText = "";
@@ -103,25 +146,12 @@ function addKeyBoardAndEmptySpaces() {
     addKeyBoard()
 }
 
-function addKeyBoard() {
-    rowToAdd = '<ul id="keyboard">\n';
-    for (let index = 65; index < 65 + 26; index++) {
-        rowToAdd+=`<li class="keyboard-buttons"><a >${String.fromCharCode(index)}</a></li>\n`
-    }
-    rowToAdd += `<li class="keyboard-buttons" style="width: 275px;"><a></a></li>\n`
-    rowToAdd += "</ul>\n";
-
-    elemToAdd = htmlCodeToElem(rowToAdd);
-
-    divUICotnrols.appendChild(elemToAdd);
-
-}
-
 function StartANewGame() {
     HideHangman();
     InitNShowCategories();
     ShowNHideElem(newGameButton, false);
 }
+
 
 InitUI()
 // addKeyBoard()
