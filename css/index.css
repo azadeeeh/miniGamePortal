@@ -78,8 +78,10 @@ nav ul {
 }
 
 
+
 .selected {
-    background-color: blue; /* Blue when clicked */
+    background-color: #c87f67; 
+    border-radius: 5px;
 }
 
 

@@ -1,8 +1,28 @@
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById('myForm');
     const thankYouMessage = document.getElementById('thankYouMessage');
+    var list = document.getElementById("list");
+    console.log(list);
+    var listItems = list.getElementsByTagName("li");
+    console.log(listItems);
 
+    //const contact = document.getElementById("contact");
+
+    //contact.classList.add("selected");
+
+    for (li of listItems) {
+      li.addEventListener("click", function () {
+        var x = document.querySelectorAll(".selected");
     
+        for (var j = 0; j < x.length; j++) {
+          x[j].classList.remove("selected");
+        }
+        
+        this.classList.add("selected");
+    
+        
+      });
+    }
   
   
     form.addEventListener('submit', function(event) {

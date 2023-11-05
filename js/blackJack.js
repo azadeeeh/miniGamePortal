@@ -37,6 +37,7 @@ function addition(number){
     var random = Math.floor(Math.random()*(max-min+1))+min;
     total += random ;
     outputContainer.innerHTML="total is : " + total ;
+    startOver.innerText="enter a number from 1 to 5";
 }
 
 
