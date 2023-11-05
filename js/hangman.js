@@ -59,7 +59,7 @@ function addKeyBoard() {
         keyboardButton.addEventListener('click', keyboardPressedEventListener);
         ulForKeyboard.appendChild(keyboardButton);
     }
-    
+
     spaceButton = htmlCodeToElem(`<li class="keyboard-buttons" style="width: 275px;"><a> </a></li>\n`);
     spaceButton.addEventListener('click', keyboardPressedEventListener);
     ulForKeyboard.appendChild(spaceButton);
@@ -113,7 +113,7 @@ categorySelectionEventListener = e => {
 keyboardPressedEventListener = e => {
 
     let chosenCharachter = e.target.innerText;
-    if(chosenCharachter === "") chosenCharachter = " ";
+    if (chosenCharachter === "") chosenCharachter = " ";
     listOfOccurances = chosenWord.allOccurances(chosenCharachter);
 
     addClassToLi = (calssName) => {
@@ -125,6 +125,7 @@ keyboardPressedEventListener = e => {
         console.log('wrrrrooonnngggg ... :D');
         addClassToLi('keyboard-buttons-disabled')
         chancesForGuessing -= 1;
+        orderedElemsOfHanging[maxErrors - chancesForGuessing - 1].classList.add('fade-in');
     }
 
     // Correct guess!
@@ -160,7 +161,6 @@ Object.assign(String.prototype,
 
 //#endregion Functions
 
-
 function InitUI() {
     newGameButton = htmlCodeToElem(`<a id="new-game" class="button z1shadow newGame-button fade-in">New Game!</a>`)
     newGameButton.addEventListener("click", StartANewGame);
@@ -174,6 +174,4 @@ function StartANewGame() {
     ShowNHideElem(newGameButton, false);
 }
 
-
 InitUI()
-// addKeyBoard()
