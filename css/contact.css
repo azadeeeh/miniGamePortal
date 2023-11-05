@@ -19,7 +19,7 @@
   }
   
   .form-button {
-    background-color: #4CAF50;
+    background-color:#c0674a;
     color: white;
     padding: 14px 20px;
     margin: 20px 0;
@@ -30,7 +30,7 @@
   }
   
   .form-button:hover {
-    background-color: #45a049;
+    background-color:  #c87f67;
   }
   
   /* New styles for grid layout */

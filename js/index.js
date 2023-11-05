@@ -2,7 +2,11 @@ var list = document.getElementById("list");
 console.log(list);
 var listItems = list.getElementsByTagName("li");
 console.log(listItems);
-//var item = document.getElementsByClassName("game-item");
+
+//back button
+function goBack() {
+    window.history.back();
+}
 
 
 //change the color of the nav bar items

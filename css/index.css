@@ -1,6 +1,5 @@
 /* General styles */
-
-html,body {
+ html,body {
     font-family: Arial, sans-serif;
     background-color: darkgray;
     margin: 0;
@@ -9,6 +8,25 @@ html,body {
     flex-direction: column;
     flex:1;
     
+}
+
+#backButton {
+    position: relative;
+    left: 15px;
+    top: 8px;
+    border: none;
+    background-color: white;
+    font-size: 30px;
+    color: gray;
+    cursor: pointer;
+    background-color: #c87f67; 
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  #backButton :hover{
+    background-color:  #c87f67;
 }
 
 .container {
