@@ -24,6 +24,10 @@ const objWords = {
     Canadian__territories: ["Northwest Territories", "Nunavut", "Yukon"]
 };
 
+const welcomingMessagesList = ["We've got a bro to save!", "DO NOT LET THEM HANG OUR BRO !", "Save MEEEEE  . . .", "Weather is cold up here !", "Start a New Game or the little bro will DIE !", "Let's save our little bro !", "Guess well or they WILL HANG ME !!!", "Guess well or they WILL HANG our little buddy !!!", "Poor little buddy  . . .", "A doggy life, all over again!", "May the force be with you!"]
+const winningMessagesList = ["You saved meee  . . . !", "Pheww.., narrow escaped !", "You are a master guesser !", "Start saving our bro again ?!", "Finally  . . .", "What took you so long ?!", "Genius !", "Yaayy ! I am saveeddd  . . ."]
+const loosingMessagesList = ["A monkey guessed better  . . .", "Don't you know your alphabet ?!", "How did you finish primary school ?!", "Knock . . . Knock . . . Knock . . . Any brain up there ?!", "Pppkkkhhh . . .", "Tell my wife I love her !", "How dare you ?!", "Am I a joke to you ?!", "Noooo . . .", "Your university degree is worthless !", "A plankton guessed better  . . .", "Let's practice alphabet ! A, B, C, D . . .", "Go get a wordbook genius !"]
+
 const maxErrors = orderedElemsOfHanging.length
 let chancesForGuessing = maxErrors;
 let numOfCorrectGuesses = 0;
@@ -35,6 +39,9 @@ let chosenWord = "";
 //#region UI Manipulators
 function HideHangman() {
     orderedElemsOfHanging.forEach((hangmanBodyPartElem) => {
+        if (hangmanBodyPartElem.classList.contains('fade-out')) hangmanBodyPartElem.classList.remove("fade-out");
+        if (hangmanBodyPartElem.classList.contains('fade-in')) hangmanBodyPartElem.classList.remove("fade-in");
+
         hangmanBodyPartElem.classList.add("fade-out");
     });
 }
@@ -112,6 +119,49 @@ function addKeyBoardAndEmptySpaces() {
 
     addKeyBoard()
 }
+
+function performWinningCeremony() {
+    divUICotnrols.innerText = "";
+    addWinningMessage();
+    addScoreMonitorer();
+    addNewGameButton();
+}
+function performLosingCeremony() {
+    divUICotnrols.innerText = "";
+    addLoosingMessage();
+    addScoreMonitorer();
+    addNewGameButton();
+}
+
+function addLoosingMessage() {
+    losingMessageElem = htmlCodeToElem("<span></span>")
+    losingMessageElem.innerText = loosingMessagesList[Math.floor(Math.random() * loosingMessagesList.length)];
+    losingMessageElem.classList.add('loosing');
+    losingMessageElem.classList.add('fade-in');
+    divUICotnrols.appendChild(losingMessageElem);
+}
+
+function addWinningMessage() {
+    winningMessageElem = htmlCodeToElem("<span></span>");
+    winningMessageElem.innerText = winningMessagesList[Math.floor(Math.random() * winningMessagesList.length)];
+    winningMessageElem.classList.add('winning');
+    winningMessageElem.classList.add('fade-in');
+    divUICotnrols.appendChild(winningMessageElem);
+}
+
+function addWelcomingMessage() {
+    winningMessageElem = htmlCodeToElem("<span></span>");
+    winningMessageElem.innerText = welcomingMessagesList[Math.floor(Math.random() * winningMessagesList.length)];
+    winningMessageElem.classList.add('welcoming');
+    winningMessageElem.classList.add('fade-in');
+    divUICotnrols.appendChild(winningMessageElem);
+}
+
+function addNewGameButton() {
+    newGameButton = htmlCodeToElem(`<a id="new-game" class="button z1shadow newGame-button fade-in">New Game!</a>`)
+    newGameButton.addEventListener("click", StartANewGame);
+    divUICotnrols.appendChild(newGameButton);
+}
 //#endregion UI Manipulators
 
 //#region Utils
@@ -161,13 +211,13 @@ keyboardPressedEventListener = e => {
 
     // Wrong guess!
     if (listOfOccurances === -1) {
-        console.log('wrrrrooonnngggg ... :D');
+        console.log('wrrrrooonnngggg  . . . :D');
         addClassToLi('keyboard-buttons-disabled');
         removeEventListeners();
         chancesForGuessing -= 1;
         orderedElemsOfHanging[maxErrors - chancesForGuessing - 1].classList.add('fade-in');
         if (chancesForGuessing === 0)
-            console.log("Perform loosing ceremony ... ")
+            performLosingCeremony();
     }
 
     // Correct guess!
@@ -180,7 +230,7 @@ keyboardPressedEventListener = e => {
         addClassToLi('keyboard-buttons-disabled')
         removeEventListeners();
         if (numOfCorrectGuesses === chosenWord.length)
-            console.log("Perform winning ceremony ... ")
+            performWinningCeremony();
     }
 
     updateScoresInUI();
@@ -210,13 +260,14 @@ Object.assign(String.prototype,
 //#endregion Functions
 
 function InitUI() {
-    newGameButton = htmlCodeToElem(`<a id="new-game" class="button z1shadow newGame-button fade-in">New Game!</a>`)
-    newGameButton.addEventListener("click", StartANewGame);
     divUICotnrols.innerText = "";
-    divUICotnrols.appendChild(newGameButton)
+    addWelcomingMessage();
+    addNewGameButton();
 }
 
 function StartANewGame() {
+    chancesForGuessing = maxErrors;
+    numOfCorrectGuesses = 0;
     HideHangman();
     InitNShowCategories();
     ShowNHideElem(newGameButton, false);

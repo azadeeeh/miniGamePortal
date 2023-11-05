@@ -70,8 +70,7 @@ line {
     flex-direction: column;
 }
 
-.categories
-{
+.categories {
     display: flex;
     justify-content: space-evenly;
     max-width: 400px;
@@ -114,8 +113,6 @@ line {
 
 .UI-Controls {
     display: flex;
-    /* background-color: black; */
-    max-width: 400px;
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
@@ -123,10 +120,8 @@ line {
 }
 
 .character-holder {
-    /* position: relative; */
     list-style: none;
     margin: 0;
-    /* display: inline-block; */
     padding: 0 5px;
     font-size: 1.75em;
 }
@@ -139,8 +134,7 @@ line {
     align-items: center;
 }
 
-.keyboard-buttons 
-{
+.keyboard-buttons {
     list-style: none;
     margin: 0;
     border: 2.5px solid black;
@@ -155,28 +149,24 @@ line {
     margin: 2.5px;
 }
 
-.keyboard-buttons:hover 
-{
+.keyboard-buttons:hover {
     transition-duration: 250ms;
     background-color: rgb(23, 164, 1);
 }
 
-.keyboard-buttons-disabled
-{
+.keyboard-buttons-disabled {
     transition-duration: 250ms;
     background-color: rgba(23, 164, 1, 0);
     opacity: 0.25;
 }
 
-.keyboard-buttons-disabled:hover
-{
+.keyboard-buttons-disabled:hover {
     background-color: rgba(23, 164, 1, 0);
     opacity: 0.25;
     cursor: default;
 }
 
-#keyboard
-{
+#keyboard {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -186,20 +176,41 @@ line {
     margin: 0;
 }
 
-.Score-Holder{
+.Score-Holder {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-span
-{
+span {
     white-space: pre;
 }
 
-a
-{
+a {
     user-select: none;
+}
+
+.loosing {
+    color: red;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2em;
+    margin-top: 15px;
+    text-shadow: 0 0 10px #000000, 0 0 10px rgba(128, 0, 0, 0.25);
+}
+
+.winning {
+    color: green;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2em;
+    margin-top: 15px;
+    text-shadow: 0 0 10px #000000, 0 0 10px rgba(0, 128, 0, 0.25);
+}
+.welcoming {
+    color: rgb(41, 31, 219);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2em;
+    margin-top: 15px;
+    text-shadow: 0 0 25px #00000028, 0 0 15px rgb(75, 66, 237);
 }
 
 @keyframes fadeInAnimation {
