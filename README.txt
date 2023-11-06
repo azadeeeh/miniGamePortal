@@ -1,6 +1,6 @@
 # Black Jack: Aim for the Perfect 21!
 
-## 📖 Description
+📖 ## Description
 
 Black Jack is a thrilling number game where players aim to hit the perfect score of 21. The computer starts with a random number between 1 and 5, and the player provides their chosen number in the same range. The chase for 21 continues as numbers are added, but be cautious! Going over 21 means a loss.
 
