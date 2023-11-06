@@ -1,4 +1,4 @@
-# 🎲 Black Jack: Aim for the Perfect 21!
+# Black Jack: Aim for the Perfect 21!
 
 ## 📖 Description
 
