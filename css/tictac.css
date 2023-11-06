@@ -67,3 +67,20 @@ td {
 .bounce-in {
     animation: bounce 0.5s;
 }
+
+.game-description {
+    text-align: center;
+    margin-top: 50px;  /* Adjusted for better spacing */
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Consistent font family */
+    color: black; /* Consistent color */
+}
+
+.game-description p:first-child {
+    font-weight: bold;
+    margin-bottom: 15px; /* Adjusted for better spacing */
+    font-size: 24px; /* Larger font size for the title */
+}
+
+.game-description p:last-child {
+    font-size: 18px; /* Adjusted font size for the description */
+}
