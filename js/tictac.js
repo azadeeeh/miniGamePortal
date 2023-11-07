@@ -20,6 +20,18 @@ function displayWinner(winner) {
   }, 5000);
 }
 
+
+function checkForTie() {
+  // Flatten the board and check if there are any empty cells left
+  const flatBoard = board.flat();
+  if (!flatBoard.includes('') && !gameOver) {
+    displayWinner('No Winner'); // Display no winner
+    gameOver = true;
+    return;
+  }
+}
+
+
 function checkWinner() {
   const flatBoard = board.flat();
   const winningCombinations = [
@@ -52,6 +64,7 @@ for (let i = 0; i < 3; i++) {
         cell.textContent = 'X';
         cell.classList.add('bounce-in');
         checkWinner();
+        checkForTie(); 
         // Delay computer's turn by 0.5 second
         if (!gameOver) {
           
@@ -69,6 +82,7 @@ for (let i = 0; i < 3; i++) {
                 chosenCell.textContent = 'O';
                 chosenCell.classList.add('bounce-in');
                 checkWinner();
+                checkForTie(); 
               }
             } while (randomCell !== '' && !gameOver);
             turnLabel.textContent = 'It is your turn'; 
