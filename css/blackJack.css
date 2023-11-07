@@ -1,12 +1,14 @@
-.gameDisplay{
+
+
+
+.gameBoard{
    
     height: 400px;
     width:400px;
     padding: 90px;
-     
-    box-sizing: border-box; 
+    box-sizing: border-box; /*padding and borders will not increase the size*/
     text-align: center;
-    margin: 0 auto;
+    margin:auto;
     margin-top: 100px;
     border: 0.5px solid rgb(120, 151, 189);
     border-radius: 15px;
@@ -16,32 +18,21 @@
     
 }
 
-.gameDisplay p{
+.gameBoard p{
     font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
-    min-width: 400px;
+    
     
 }
 
-.gameDisplay:hover {
+.gameBoard:hover {
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.25);
 }
 
 
 
-.ask{
-    font-family: cursive;
-    text-align: center;
-    display: block;
-    text-align: center;
-    margin: 0 auto;
-    padding: 30px;
-    color:black;
-    font-weight: bold;
-    font-size: 30px;
-    
-}
+
 
 #userInput{
     background-color: darkgray;
@@ -52,12 +43,6 @@
     
 }
 
-#userInput:focus {
-    border: 2px solid #FF5721;
-    background-color: darkgray;
-    
-    
-}
 
 
 #addNumber {
