@@ -1,0 +1,111 @@
+.gameDisplay{
+   
+    height: 400px;
+    width:400px;
+    padding: 90px;
+     
+    box-sizing: border-box; 
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 100px;
+    border: 0.5px solid rgb(120, 151, 189);
+    border-radius: 15px;
+    background-color: rgba(123, 191, 250, 0.25);
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.25);
+    transition-duration: 500ms
+    
+}
+
+.gameDisplay p{
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 16px;
+    min-width: 400px;
+    
+}
+
+.gameDisplay:hover {
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+
+
+.ask{
+    font-family: cursive;
+    text-align: center;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    padding: 30px;
+    color:black;
+    font-weight: bold;
+    font-size: 30px;
+    
+}
+
+#userInput{
+    background-color: darkgray;
+    margin: 20px;
+    padding: 5px;
+    border : 2px solid gray;
+    border-radius: 10px;
+    
+}
+
+#userInput:focus {
+    border: 2px solid #FF5721;
+    background-color: darkgray;
+    
+    
+}
+
+
+#addNumber {
+    background-color: rgb(162, 243, 162);
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: 2.5px solid black;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.25);
+    transition-duration: 500ms;
+    
+
+}
+
+#addNumber:hover {
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+#outputContainer{
+    margin: auto;
+    text-align: center;
+    font-size: 30px;;
+   
+}
+
+#startOver{
+    margin-top: 20px;
+    
+}
+
+
+.game-description {
+    text-align: center;
+    margin-top: 50px;  /* Adjusted for better spacing */
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Consistent font family */
+    color: black; /* Consistent color */
+}
+
+.game-description p:first-child {
+    font-weight: bold;
+    margin-bottom: 15px; /* Adjusted for better spacing */
+    font-size: 24px; /* Larger font size for the title */
+}
+
+.game-description p:last-child {
+    font-size: 18px; /* Adjusted font size for the description */
+}
+

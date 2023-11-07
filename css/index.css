@@ -1,6 +1,5 @@
 /* General styles */
-
-html,body {
+ html,body {
     font-family: Arial, sans-serif;
     background-color: darkgray;
     margin: 0;
@@ -9,6 +8,25 @@ html,body {
     flex-direction: column;
     flex:1;
     
+}
+
+#backButton {
+    position: relative;
+    left: 15px;
+    top: 8px;
+    border: none;
+    background-color: white;
+    font-size: 30px;
+    color: gray;
+    cursor: pointer;
+    background-color: #c87f67; 
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  #backButton :hover{
+    background-color:  #c87f67;
 }
 
 .container {
@@ -34,7 +52,6 @@ header {
     height: 60px;
     border-radius: 10px;
     
-    overflow: hidden;
     
 }
 
@@ -66,15 +83,24 @@ nav ul {
 }
 
 .nav-item {
+
     margin-right: 20px;
-    position: relative; 
+    position:relative;
+    
     
 }
 
-.nav-item :hover {
-    color:#FF5721;
+
+.nav-item :hover{
+    color: #FF5721; 
 }
 
+
+
+.selected {
+    background-color: #c87f67; 
+    border-radius: 5px;
+}
 
 
 #game-dropdown-content{
@@ -97,9 +123,6 @@ li:hover #game-dropdown-content {
     
 }
 
-.game-item a:hover {
-    color:#FF5721;
-}
 
 
 
@@ -137,7 +160,13 @@ article {
     box-sizing: border-box; 
     text-align: center;
     height: 500px;
+    transition: transform 0.2s, filter 0.2s; /* making the change on hover smooth */
     
+}
+
+article:hover {
+    transform: scale(1.06); /* move up the article slightly on hover */
+    filter: brightness(1.5); /* Brighten the article on hover */
 }
 
 article img {
@@ -149,12 +178,12 @@ article img {
     
 }
 
+
+
 .row{
     display: flex;
     width: 1000px;
 }
-
-
 
 .foot {
     background: radial-gradient(circle,rgb(61, 69, 78),  rgb(84, 90, 96));
@@ -163,11 +192,13 @@ article img {
     width:100%;
     height: 60px;
     border-radius: 10px;
-    
 }
 
 .foot p{
-    padding: 20px;
+    padding: 15px;
+    margin-bottom: 0;
+    
+
 }
 
 @media (max-width: 600px) {

@@ -1,0 +1,29 @@
+.gameDisplay{
+
+    margin:100px auto;
+    padding: 90px;
+    border: 3px solid black;
+    border-radius: 20px;
+    justify-content: center;
+    align-items: center;   
+    box-sizing: border-box; 
+    text-align: center;
+    height: 400px;
+    width:400px;
+    transition: transform 0.2s, filter 0.2s; /* making the change on hover smooth */
+    
+}
+
+.gameDisplay p{
+
+    margin:auto;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+ }
+
+.gameDisplay:hover {
+
+    transform: scale(1.06); /* move up the article slightly on hover */
+    filter: brightness(1.5); /* Brighten the article on hover */
+}
+

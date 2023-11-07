@@ -1,0 +1,86 @@
+/* Existing container style */
+.container1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* 100% of the viewport height */
+    margin: 0;
+    padding: 0;
+}
+
+/* Updated table styles */
+table {
+    width: 400px;
+    height: 400px;
+    border-collapse: collapse;
+    margin: 0 auto;
+    border: 0.5px solid rgb(120, 151, 189);
+    border-radius: 15px;
+    background-color: rgba(123, 191, 250, 0.25);
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.25);
+    transition-duration: 500ms;
+    margin-bottom: 50px;  /* Adjust this value to your preference */
+}
+
+table:hover {
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* Updated table cell styles */
+td {
+    width: 133px;  /* Adjust as needed */
+    height: 133px;  /* Adjust as needed */
+    border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 32px;
+    box-sizing: border-box;  /* Include border and padding in the element's total width and height */
+  }
+
+/* Updated button styles */
+.newGame-button {
+    background-color: rgb(162, 243, 162);
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border: 2.5px solid black;
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.25);
+    transition-duration: 500ms;
+}
+
+.newGame-button:hover {
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-20px); }
+    60% { transform: translateY(-10px); }
+}
+
+.bounce-in {
+    animation: bounce 0.5s;
+}
+
+.game-description {
+    text-align: center;
+    margin-top: 50px;  /* Adjusted for better spacing */
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Consistent font family */
+    color: black; /* Consistent color */
+}
+
+.game-description p:first-child {
+    font-weight: bold;
+    margin-bottom: 15px; /* Adjusted for better spacing */
+    font-size: 24px; /* Larger font size for the title */
+}
+
+.game-description p:last-child {
+    font-size: 18px; /* Adjusted font size for the description */
+}
