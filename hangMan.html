@@ -54,9 +54,9 @@
                      a hangman. Each of the lines in this drawing has its
                      own element (as a child in the SVG tag) and we are using
                      these elements to show/hide the hangman step by step -->
-                <svg height="400" width="400" class="z1shadow">
+                <svg height="270" width="400" class="z1shadow">
                     <g id="Body">
-                        <g id="Head" class="hide">
+                        <g id="Head">
                             <circle cx="200" cy="80" r="20" stroke="black" stroke-width="4" fill="white" />
                             <g id="LiveEyes">
                                 <circle cx="193" cy="80" r="4" />
@@ -69,29 +69,25 @@
                                 <line x1="204" y1="84" x2="210" y2="78" />
                             </g>
                         </g>
-                        <line id="BodyShaft" x1="200" class="hide" y1="100" x2="200" y2="150" />
-                        <line id="LeftArm" class="hide" x1="200" y1="120" x2="170" y2="140" />
-                        <line id="RightArm" class="hide" x1="200" y1="120" x2="230" y2="140" />
-                        <line id="LeftLeg" class="hide" x1="200" y1="150" x2="180" y2="190" />
-                        <line id="RightLeg" class="hide" x1="200" y1="150" x2="220" y2="190" />
+                        <line id="BodyShaft" x1="200" y1="100" x2="200" y2="150" />
+                        <line id="LeftArm" x1="200" y1="120" x2="170" y2="140" />
+                        <line id="RightArm" x1="200" y1="120" x2="230" y2="140" />
+                        <line id="LeftLeg" x1="200" y1="150" x2="180" y2="190" />
+                        <line id="RightLeg" x1="200" y1="150" x2="220" y2="190" />
                     </g>
-                    <line id="RodOne" class="hide" x1="100" y1="250" x2="100" y2="20" />
-                    <line id="RodTwo" class="hide" x1="100" y1="20" x2="200" y2="20" />
-                    <line id="Rope" class="hide" x1="200" y1="20" x2="200" y2="60" />
+                    <line id="RodOne" x1="100" y1="250" x2="100" y2="20" />
+                    <line id="RodTwo" x1="100" y1="20" x2="200" y2="20" />
+                    <line id="Rope" x1="200" y1="20" x2="200" y2="60" />
                     <line x1="10" y1="250" x2="150" y2="250" />
                     <line id="door1" x1="150" y1="250" x2="200" y2="250" />
                     <line id="door2" x1="200" y1="250" x2="250" y2="250" />
                     <line x1="250" y1="250" x2="390" y2="250" />
                 </svg>
 
-                <!-- The button button to start a new game -->
-                <a id="new-game" class="button z1shadow newGame-button">New Game!</a>
-                
-                <!-- Div that contains the buttons for choosing the category 
-                     of the target word -->
-                <div id="categories" class="categories hide"></div>
-                
-                <div id="buttons"></div>
+                <div id="UI-Controls" class="UI-Controls">
+                    <!-- <a id="new-game" class="button z1shadow newGame-button">New Game!</a> -->
+                </div>
+
             </section>
         </main>
 

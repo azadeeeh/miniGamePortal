@@ -44,13 +44,14 @@ line {
     border: 2.5px solid black;
     border-radius: 15px;
     padding: 15px;
-    margin-top: 35px;
+    background-color: rgb(162, 243, 162);
     cursor: pointer;
 }
 
 .newGame-button {
     background-color: rgb(162, 243, 162);
     transition-duration: 500ms;
+    margin: 25px;
     box-shadow: 0px 0px 5px 5px rgb(0, 0, 0, 0.25);
 }
 
@@ -69,11 +70,18 @@ line {
     flex-direction: column;
 }
 
+.categories {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 400px;
+    flex-wrap: wrap;
+}
+
 .categories-buttons {
     border: 2.5px solid black;
     border-radius: 15px;
     padding: 15px;
-    margin: 10px;
+    margin-top: 15px;
     cursor: pointer;
 }
 
@@ -87,14 +95,143 @@ line {
     box-shadow: 0px 0px 5px 5px rgb(0, 0, 0, 0.25);
 }
 
-.categories
-{
+.fade-out {
+    /* transition-duration: 500ms;
+    opacity: 0; */
+    animation: fadeOutAnimation ease-out 500ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.fade-in {
+    /* transition-duration: 1500ms; */
+    /* opacity: 1; */
+    animation: fadeInAnimation ease-in 500ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.UI-Controls {
     display: flex;
-    height: fit-content;
+    justify-content: space-evenly;
+    align-items: center;
     flex-wrap: wrap;
-    width: 350px;
-    margin-top: 15px;
+    flex-direction: column;
+}
+
+.character-holder {
+    list-style: none;
+    margin: 0;
+    padding: 0 5px;
+    font-size: 1.75em;
+}
+
+.characters-holder {
+    padding: 0;
+    display: flex;
+    max-width: 250px;
     justify-content: center;
+    align-items: center;
+}
+
+.keyboard-buttons {
+    list-style: none;
+    margin: 0;
+    border: 2.5px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: rgb(162, 243, 162);
+    cursor: pointer;
+    width: 12.5px;
+    height: 12.5px;
+    justify-content: center;
+    align-items: center;
+    margin: 2.5px;
+}
+
+.keyboard-buttons:hover {
+    transition-duration: 250ms;
+    background-color: rgb(23, 164, 1);
+}
+
+.keyboard-buttons-disabled {
+    transition-duration: 250ms;
+    background-color: rgba(23, 164, 1, 0);
+    opacity: 0.25;
+}
+
+.keyboard-buttons-disabled:hover {
+    background-color: rgba(23, 164, 1, 0);
+    opacity: 0.25;
+    cursor: default;
+}
+
+#keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+    max-width: 400px;
+    padding: 0;
+    margin: 0;
+}
+
+.Score-Holder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+span {
+    white-space: pre;
+}
+
+a {
+    user-select: none;
+}
+
+.loosing {
+    color: red;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2em;
+    margin-top: 15px;
+    text-shadow: 0 0 10px #000000, 0 0 10px rgba(128, 0, 0, 0.25);
+}
+
+.winning {
+    color: green;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2em;
+    margin-top: 15px;
+    text-shadow: 0 0 10px #000000, 0 0 10px rgba(0, 128, 0, 0.25);
+}
+.welcoming {
+    color: rgb(41, 31, 219);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 2em;
+    margin-top: 15px;
+    text-shadow: 0 0 25px #00000028, 0 0 15px rgb(75, 66, 237);
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutAnimation {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
 }
 
 .game-description {
@@ -112,4 +249,5 @@ line {
 
 .game-description p:last-child {
     font-size: 18px; /* Adjusted font size for the description */
+
 }
