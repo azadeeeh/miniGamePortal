@@ -10,6 +10,7 @@
 
 }
 
+
 /* Updated table styles */
 table {
     width: 400px;
@@ -22,7 +23,7 @@ table {
     box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.25);
     transition-duration: 500ms;
     margin-bottom: 50px;  /* Adjust this value to your preference */
-    margin-top : -300px;
+    margin-top : 40;
    
 }
 
@@ -53,11 +54,18 @@ td {
     border-radius: 15px;
     box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.25);
     transition-duration: 500ms;
+    display: block;
+    margin: 0 auto;
+    
+
 }
 
 .newGame-button:hover {
     box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.25);
 }
+
+
+
 
 
 
