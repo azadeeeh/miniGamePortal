@@ -1,10 +1,10 @@
 // Initialize game board as a 3x3 array
 let board = [
-    ['', '', ''],
-    ['', '', ''],
-    ['', '', '']
-  ];
-  
+  ['', '', ''],
+  ['', '', ''],
+  ['', '', '']
+];
+
 let gameOver = false;
 
 // Function to check for a winner
@@ -15,8 +15,8 @@ function displayWinner(winner) {
   winnerLabel.style.fontSize = '2em'; // Increase font size
   winnerLabel.style.color = (winner === 'X') ? 'blue' : 'red'; // Different colors for user and computer
   setTimeout(() => {
-      winnerLabel.style.fontSize = '1em'; // Reset to original size after 2 seconds
-      winnerLabel.style.color = 'black';  // Reset to original color
+    winnerLabel.style.fontSize = '1em'; // Reset to original size after 2 seconds
+    winnerLabel.style.color = 'black';  // Reset to original color
   }, 5000);
 }
 
@@ -35,41 +35,41 @@ function checkForTie() {
 function checkWinner() {
   const flatBoard = board.flat();
   const winningCombinations = [
-      [0, 1, 2], [3, 4, 5], [6, 7, 8],  // Rows
-      [0, 3, 6], [1, 4, 7], [2, 5, 8],  // Columns
-      [0, 4, 8], [2, 4, 6]  // Diagonals
+    [0, 1, 2], [3, 4, 5], [6, 7, 8],  // Rows
+    [0, 3, 6], [1, 4, 7], [2, 5, 8],  // Columns
+    [0, 4, 8], [2, 4, 6]  // Diagonals
   ];
-  
+
   for (const [a, b, c] of winningCombinations) {
-      if (flatBoard[a] && flatBoard[a] === flatBoard[b] && flatBoard[a] === flatBoard[c]) {
-          displayWinner(flatBoard[a]);
-          gameOver = true;
-          return;
-      }
+    if (flatBoard[a] && flatBoard[a] === flatBoard[b] && flatBoard[a] === flatBoard[c]) {
+      displayWinner(flatBoard[a]);
+      gameOver = true;
+      return;
+    }
   }
 }
 
 
-  
+
 let turnLabel = document.getElementById('turn-label');
-turnLabel.textContent = 'It is your turn'; 
+turnLabel.textContent = 'It is your turn';
 // Add click event listeners to each cell
 for (let i = 0; i < 3; i++) {
   for (let j = 0; j < 3; j++) {
     const cell = document.getElementById(`cell${i}${j}`);
-    cell.addEventListener('click', function() {
+    cell.addEventListener('click', function () {
       if (!gameOver && board[i][j] === '') {
         // User's turn
         board[i][j] = 'X';
         cell.textContent = 'X';
         cell.classList.add('bounce-in');
         checkWinner();
-        checkForTie(); 
+        checkForTie();
         // Delay computer's turn by 0.5 second
         if (!gameOver) {
-          
+
           turnLabel.textContent = 'It is computer\'s turn';
-          setTimeout(function() {
+          setTimeout(function () {
             let randomCell;
             do {
               const randomIndex = Math.floor(Math.random() * 9);
@@ -82,10 +82,10 @@ for (let i = 0; i < 3; i++) {
                 chosenCell.textContent = 'O';
                 chosenCell.classList.add('bounce-in');
                 checkWinner();
-                checkForTie(); 
+                checkForTie();
               }
             } while (randomCell !== '' && !gameOver);
-            turnLabel.textContent = 'It is your turn'; 
+            turnLabel.textContent = 'It is your turn';
           }, 500);
         }
       }
@@ -94,7 +94,7 @@ for (let i = 0; i < 3; i++) {
 }
 
 // Reset game when 'New Game' button is clicked
-document.getElementById('new-game').addEventListener('click', function() {
+document.getElementById('new-game').addEventListener('click', function () {
   // Reset the board array
   board = [
     ['', '', ''],
@@ -113,4 +113,3 @@ document.getElementById('new-game').addEventListener('click', function() {
   winnerLabel.textContent = '';  // Clear the winner label
   resetCell.classList.remove('bounce-in');// Remove all potential animation classes
 });
-  
