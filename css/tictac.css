@@ -4,9 +4,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* 100% of the viewport height */
+    min-height: 10vh; /* 100% of the viewport height */
     margin: 0;
     padding: 0;
+    padding-bottom: 50px; /* Add padding to the bottom to ensure space for the footer */
+
 }
 
 /* Updated table styles */
@@ -83,4 +85,14 @@ td {
 
 .game-description p:last-child {
     font-size: 18px; /* Adjusted font size for the description */
+}
+
+.foot {
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    box-sizing: border-box;
+    clear: both; /* Clear floats */
+    position: relative; /* Position relative to its normal position */
+    margin-top: 0px; /* Ensure there's space between the table and the footer */
 }
