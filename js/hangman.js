@@ -171,6 +171,7 @@ function addKeyBoardAndEmptySpaces() {
  */
 function performWinningCeremony() {
     divUICotnrols.innerText = "";
+    addCorrectWordOnWinning();
     addWinningMessage();
     addScoreMonitorer();
     addNewGameButton();
@@ -178,9 +179,10 @@ function performWinningCeremony() {
 
 /**
  * Perform losing ceremony ... 
- */
+*/
 function performLosingCeremony() {
     divUICotnrols.innerText = "";
+    addCorrectWordOnLosing();
     addLosingMessage();
     addScoreMonitorer();
     addNewGameButton();
@@ -197,15 +199,31 @@ function addLosingMessage() {
     divUICotnrols.appendChild(losingMessageElem);
 }
 
+function addCorrectWordOnLosing() {
+    correctWordElem = htmlCodeToElem("<span></span>")
+    correctWordElem.innerText = "Correct word was: " + chosenWord;
+    correctWordElem.classList.add('losing');
+    correctWordElem.classList.add('fade-in');
+    divUICotnrols.appendChild(correctWordElem);
+}
+
 /**
  * Shows a random message to the user when he/she wins
- */
+*/
 function addWinningMessage() {
     winningMessageElem = htmlCodeToElem("<span></span>");
     winningMessageElem.innerText = winningMessagesList[Math.floor(Math.random() * winningMessagesList.length)];
     winningMessageElem.classList.add('winning');
     winningMessageElem.classList.add('fade-in');
     divUICotnrols.appendChild(winningMessageElem);
+}
+
+function addCorrectWordOnWinning() {
+    correctWordElem = htmlCodeToElem("<span></span>")
+    correctWordElem.innerText = chosenWord;
+    correctWordElem.classList.add('winning');
+    correctWordElem.classList.add('fade-in');
+    divUICotnrols.appendChild(correctWordElem);
 }
 
 /**
