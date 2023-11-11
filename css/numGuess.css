@@ -11,7 +11,7 @@
     height: 400px;
     width:400px;
     transition: transform 0.2s, filter 0.2s; /* making the change on hover smooth */
-    
+    margin-bottom:200px;
 }
 
 .gameDisplay p{

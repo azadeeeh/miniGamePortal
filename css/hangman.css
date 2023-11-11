@@ -1,3 +1,9 @@
+main{
+    margin-bottom: 130px;
+}
+
+
+
 svg {
     margin: 0 auto;
     border: 2.5px solid black;
@@ -69,6 +75,9 @@ line {
     align-items: center;
     flex-direction: column;
 }
+
+
+
 
 .categories {
     display: flex;

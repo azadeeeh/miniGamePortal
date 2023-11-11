@@ -3,6 +3,7 @@
     padding-right: 20px;
     max-width: 600px; /* Limit the width */
     margin: 0 auto; /* Center the form container */
+    margin-bottom: 130px;
 }
 
 .form-group {

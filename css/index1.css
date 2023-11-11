@@ -3,7 +3,6 @@ html, body {
     font-family: Arial, sans-serif;
     background-color: darkgray;
     height:100%;
-    width: 100%;
     margin:0;
     padding:0;
    
@@ -107,7 +106,6 @@ li:hover #game-dropdown-content {
 }
 
 .gameDisplay{
-    
     width:70%;
     display:flex;
     flex-wrap: wrap;
@@ -173,7 +171,7 @@ footer {
 }
 
 
-@media screen and (max-width: 768px) {
+@media  screen and (max-width: 768px) {
 
    
 
