@@ -45,7 +45,7 @@ const winningMessagesList = ["You saved meee  . . . !", "Pheww.., narrow escaped
 /**
  * List of messages for showing to the user when he/she looses.
  */
-const loosingMessagesList = ["A monkey guessed better  . . .", "Don't you know your alphabet ?!", "How did you finish primary school ?!", "Knock . . . Knock . . . Knock . . . Any brain up there ?!", "Pppkkkhhh . . .", "Tell my wife I love her !", "How dare you ?!", "Am I a joke to you ?!", "Noooo . . .", "Your university degree is worthless !", "A plankton guessed better  . . .", "Let's practice alphabet ! A, B, C, D . . .", "Go get a wordbook genius !"]
+const losingMessagesList = ["A monkey guessed better  . . .", "Don't you know your alphabet ?!", "How did you finish primary school ?!", "Knock . . . Knock . . . Knock . . . Any brain up there ?!", "Pppkkkhhh . . .", "Tell my wife I love her !", "How dare you ?!", "Am I a joke to you ?!", "Noooo . . .", "Your university degree is worthless !", "A plankton guessed better  . . .", "Let's practice alphabet ! A, B, C, D . . .", "Go get a wordbook genius !"]
 
 /**
  * Maximum number of errors each player can make.
@@ -181,7 +181,7 @@ function performWinningCeremony() {
  */
 function performLosingCeremony() {
     divUICotnrols.innerText = "";
-    addLoosingMessage();
+    addLosingMessage();
     addScoreMonitorer();
     addNewGameButton();
 }
@@ -189,10 +189,10 @@ function performLosingCeremony() {
 /**
  * Shows a random message to the user when he/she looses
  */
-function addLoosingMessage() {
+function addLosingMessage() {
     losingMessageElem = htmlCodeToElem("<span></span>")
-    losingMessageElem.innerText = loosingMessagesList[Math.floor(Math.random() * loosingMessagesList.length)];
-    losingMessageElem.classList.add('loosing');
+    losingMessageElem.innerText = losingMessagesList[Math.floor(Math.random() * losingMessagesList.length)];
+    losingMessageElem.classList.add('losing');
     losingMessageElem.classList.add('fade-in');
     divUICotnrols.appendChild(losingMessageElem);
 }
