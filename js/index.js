@@ -3,6 +3,9 @@ console.log(list);
 var listItems = list.getElementsByTagName("li");
 console.log(listItems);
 
+var headButton = document.getElementById("headButton");
+var nav = document.querySelector("nav");
+
 //back button
 function goBack() {
     window.history.back();
@@ -20,6 +23,13 @@ for (li of listItems) {
         this.classList.add("selected");
     });
 }
+
+/*function button() {
+    nav.style.display = (nav.style.display === 'block') ? 'none' : 'block';
+    console.log("clicked");
+}
+
+headButton.addEventListener("click", button);*/
 
 // Change the color of the nav bar items
 /*

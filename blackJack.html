@@ -23,7 +23,7 @@
                         <li class="game-item selected"><a href="blackJack.html">Black Jack</a></li>
                         <li class="game-item"><a href="tictac.html">Tic Tac Toe</a></li>
                         <li class="game-item"><a href="hangMan.html">hangman</a></li>
-                        <li class="game-item"><a href="numGuess.html">Number Guesser</a></li>
+                        <!--<li class="game-item"><a href="numGuess.html">Number Guesser</a></li>!-->
                     </ul>
                 </li>
                 <li class="nav-item"><a href="contact.html">Contact</a></li>
@@ -38,23 +38,25 @@
 
 
     </header>
-    <button id="backButton" onclick="goBack()">
-        &#8592
-    </button>
-    <div class="game-description">
-        <p>Black Jack</p>
-        <p>Players and the computer add numbers, aiming for the exact score of 21 without exceeding it!</p>
-    </div>
 
-    <section class="gameBoard">
 
-        <div id="outputContainer">Welcome!</div>
-        <!--<button id="blackJackButton">Start</button>-->
-        <input id="userInput" placeholder="Number from 1-5 or exit:">
-        <button id="addNumber">Add number</button>
-        <div id="startOver">Enter a number from 1 to 5</div>
+    <main>
+        <button id="backButton" onclick="goBack()">
+            &#8592
+        </button>
+        <h1>Black Jack</h1>
+        <div class="game-description">
+            <p>Players and the computer add numbers, aiming for the exact score of 21 without exceeding it!</p>
+        </div>
+        <section class="gameBoard">
+            <div id="outputContainer">Welcome!</div>
+            <!--<button id="blackJackButton">Start</button>-->
+            <input id="userInput" placeholder="Number from 1-5 or exit:">
+            <button id="addNumber">Add number</button>
+            <div id="startOver">Enter a number from 1 to 5</div>
+        </section>
 
-    </section>
+    </main>
 
     <footer class="foot">
         <p> Mini-Games Portal &copy; 2023</p>

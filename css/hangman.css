@@ -1,7 +1,24 @@
 main{
-    margin-bottom: 130px;
+   
+    min-height: 80%;
+    flex:1;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    margin: 0;
+}
+
+/* Your existing styles for main, h1, gameBoard, game-description, etc. */
+
+/* Add media query for better responsiveness */
+@media (max-width: 768px) {
+    body {
+        display: block;
+    }
+}
 
 
 svg {
@@ -73,7 +90,8 @@ line {
 
 .gameDisplay {
     align-items: center;
-    flex-direction: column;
+    
+    
 }
 
 

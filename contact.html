@@ -9,71 +9,75 @@
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <a href="index.html"><img class="logo"  src="./image/logo1.png" /> </a>
-            <nav>
-                <ul id="list">
-                    <li class="nav-item"><a href="index.html">Home</a></li>
-                    <li class="nav-item">
-                        <a href="#">Games</a>
-                        <ul id="game-dropdown-content">
-                            <li class="game-item"><a href="blackJack.html">Black Jack</a></li>
-                            <li class="game-item"><a href="tictac.html">Tic Tac Toe</a></li>
-                            <li class="game-item"><a href="hangMan.html">hangman</a></li>
-                            <li class="game-item"><a href="numGuess.html">Number Guesser</a></li>
-                        
-                        </ul>
-                    </li>
-                    <li class="nav-item selected"><a href="#">Contact</a></li>
-                    <li class="nav-item"><a href="#">Login</a></li>
-                    <li class="nav-item"><a href="#">Leaderboard</a></li>
-                </ul>
-            </nav>
-            <div class="search-bar">
-                <input type="text" placeholder="Search...">
-                <button>Search</button>
-            </div>
 
-        </header>
-        <button id= "backButton" onclick="goBack()">
+    <header>
+        <a href="index.html"><img class="logo" src="./image/logo1.png" /> </a>
+        <nav>
+            <ul id="list">
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item">
+                    <a href="#">Games</a>
+                    <ul id="game-dropdown-content">
+                        <li class="game-item"><a href="blackJack.html">Black Jack</a></li>
+                        <li class="game-item"><a href="tictac.html">Tic Tac Toe</a></li>
+                        <li class="game-item"><a href="hangMan.html">hangman</a></li>
+                        <li class="game-item"><a href="numGuess.html">Number Guesser</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item selected"><a href="#">Contact</a></li>
+                <li class="nav-item"><a href="#">Login</a></li>
+                <li class="nav-item"><a href="#">Leaderboard</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
+
+    </header>
+
+    <main>
+        <button id="backButton" onclick="goBack()">
             &#8592
         </button>
-        <main>
-                <section id="myForm">
-                    <div class="form-container">
-                        <h2>Contact US</h2>
-                        <form id="myForm" action="submit_here" method="post" class="form-grid">
-                            <div class="form-group">
-                                Name: <input id="name" name="name" type="text" required class="form-input" placeholder="enter your name"/>
-                            </div>
-                            <span id="nameError" class="error"></span>
-                            <div class="form-group">
-                                Email Address: <input id="email" name="email_address" type="text" required class="form-input" placeholder="enter your email address"/>
-                            </div>
-                            <span id="emailError" class="error"></span>
-                            <div class="form-group">
-                                Purpose of Contact
-                                <select name="Purpose of Contact" class="form-select">
-                                  <option value="New Game Request">New Game Request</option>
-                                  <option value="Reporting a Bug">Reporting a Bug</option>
-                                  </select>
-
-                              </div>
-                              <div class="form-group">
-                                Your Message: <textarea cols="50" name="Message" rows="4" class="form-textarea" placeholder="enter your message"></textarea>
-                              </div>
-                            <button type="submit" class="form-button">Submit</button>
-                        </form>
+        <section id="myForm">
+            <div class="form-container">
+                <h2>Contact US</h2>
+                <form id="myForm" action="submit_here" method="post" class="form-grid">
+                    <div class="form-group">
+                        Name: <input id="name" name="name" type="text" required class="form-input"
+                            placeholder="enter your name" />
                     </div>
-                    <p id="thankYouMessage"></p>
-                </section>
-        </main>
+                    <span id="nameError" class="error"></span>
+                    <div class="form-group">
+                        Email Address: <input id="email" name="email_address" type="text" required class="form-input"
+                            placeholder="enter your email address" />
+                    </div>
+                    <span id="emailError" class="error"></span>
+                    <div class="form-group">
+                        Purpose of Contact
+                        <select name="Purpose of Contact" class="form-select">
+                            <option value="New Game Request">New Game Request</option>
+                            <option value="Reporting a Bug">Reporting a Bug</option>
+                        </select>
 
-        <footer class="foot">
-            <p> Mini-Games Portal &copy; 2023</p>
-        </footer>
-    </div>
+                    </div>
+                    <div class="form-group">
+                        Your Message: <textarea cols="50" name="Message" rows="4" class="form-textarea"
+                            placeholder="enter your message"></textarea>
+                    </div>
+                    <button type="submit" class="form-button">Submit</button>
+                </form>
+            </div>
+            <p id="thankYouMessage"></p>
+        </section>
+    </main>
+
+    <footer class="foot">
+        <p> Mini-Games Portal &copy; 2023</p>
+    </footer>
+
 </body>
 <script src="./js/contact.js"></script>
 <script src="./js/index.js"></script>

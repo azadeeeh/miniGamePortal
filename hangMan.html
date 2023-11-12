@@ -9,93 +9,94 @@
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <a href="index.html"><img class="logo" src="./image/logo1.png" /> </a>
-            <nav>
-                <ul>
-                    <li class="nav-item"><a href="index.html">Home</a></li>
-                    <li class="nav-item selected">
-                        <a href="#">Games</a>
-                        <ul id="game-dropdown-content">
-                            <li class="game-item"><a href="blackJack.html">Black Jack</a></li>
-                            <li class="game-item"><a href="tictac.html">Tic Tac Toe</a></li>
-                            <li class="game-item selected"><a href="hangMan.html">hangman</a></li>
-                            <li class="game-item"><a href="numGuess.html">Number Guesser</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item"><a href="contact.html">Contact</a></li>
-                    <li class="nav-item"><a href="#">Login</a></li>
-                    <li class="nav-item"><a href="#">Leaderboard</a></li>
-                </ul>
-            </nav>
-            <div class="search-bar">
-                <input type="text" placeholder="Search...">
-                <button>Search</button>
-            </div>
+
+    <header>
+        <a href="index.html"><img class="logo" src="./image/logo1.png" /> </a>
+        <nav>
+            <ul>
+                <li class="nav-item"><a href="index.html">Home</a></li>
+                <li class="nav-item selected">
+                    <a href="#">Games</a>
+                    <ul id="game-dropdown-content">
+                        <li class="game-item"><a href="blackJack.html">Black Jack</a></li>
+                        <li class="game-item"><a href="tictac.html">Tic Tac Toe</a></li>
+                        <li class="game-item selected"><a href="hangMan.html">hangman</a></li>
+                        <!--<li class="game-item"><a href="numGuess.html">Number Guesser</a></li>!-->
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="contact.html">Contact</a></li>
+                <li class="nav-item"><a href="#">Login</a></li>
+                <li class="nav-item"><a href="#">Leaderboard</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button>Search</button>
+        </div>
 
 
-        </header>
+    </header>
+
+
+    <main>
         <button id="backButton" onclick="goBack()">
             &#8592
         </button>
 
-        <main>
-
-            <div class="game-description">
-                <p>Hamgman</p>
-                <p>Guess the hidden word letter by letter, but be careful – too many wrong guesses and the hangman is
-                    complete!</p>
-            </div>
+        <div class="game-description">
+            <p>Hamgman</p>
+            <p>Guess the hidden word letter by letter, but be careful – too many wrong guesses and the hangman is
+                complete!</p>
+        </div>
 
 
-            <section class="gameDisplay">
-                <!-- Source of SVG file: https://codepen.io/aaronng/pen/JNRqYe -->
-                <!-- The following tag contains the SVG paths for drawing 
+        <section class="gameDisplay">
+            <!-- Source of SVG file: https://codepen.io/aaronng/pen/JNRqYe -->
+            <!-- The following tag contains the SVG paths for drawing 
                      a hangman. Each of the lines in this drawing has its
                      own element (as a child in the SVG tag) and we are using
                      these elements to show/hide the hangman step by step -->
-                <svg height="270" width="400" class="z1shadow">
-                    <g id="Body">
-                        <g id="Head">
-                            <circle cx="200" cy="80" r="20" stroke="black" stroke-width="4" fill="white" />
-                            <g id="LiveEyes">
-                                <circle cx="193" cy="80" r="4" />
-                                <circle cx="207" cy="80" r="4" />
-                            </g>
-                            <g id="DeadEyes" class="hide">
-                                <line x1="190" y1="78" x2="196" y2="84" />
-                                <line x1="204" y1="78" x2="210" y2="84" />
-                                <line x1="190" y1="84" x2="196" y2="78" />
-                                <line x1="204" y1="84" x2="210" y2="78" />
-                            </g>
+            <svg height="270" width="400" class="z1shadow">
+                <g id="Body">
+                    <g id="Head">
+                        <circle cx="200" cy="80" r="20" stroke="black" stroke-width="4" fill="white" />
+                        <g id="LiveEyes">
+                            <circle cx="193" cy="80" r="4" />
+                            <circle cx="207" cy="80" r="4" />
                         </g>
-                        <line id="BodyShaft" x1="200" y1="100" x2="200" y2="150" />
-                        <line id="LeftArm" x1="200" y1="120" x2="170" y2="140" />
-                        <line id="RightArm" x1="200" y1="120" x2="230" y2="140" />
-                        <line id="LeftLeg" x1="200" y1="150" x2="180" y2="190" />
-                        <line id="RightLeg" x1="200" y1="150" x2="220" y2="190" />
+                        <g id="DeadEyes" class="hide">
+                            <line x1="190" y1="78" x2="196" y2="84" />
+                            <line x1="204" y1="78" x2="210" y2="84" />
+                            <line x1="190" y1="84" x2="196" y2="78" />
+                            <line x1="204" y1="84" x2="210" y2="78" />
+                        </g>
                     </g>
-                    <line id="RodOne" x1="100" y1="250" x2="100" y2="20" />
-                    <line id="RodTwo" x1="100" y1="20" x2="200" y2="20" />
-                    <line id="Rope" x1="200" y1="20" x2="200" y2="60" />
-                    <line x1="10" y1="250" x2="150" y2="250" />
-                    <line id="door1" x1="150" y1="250" x2="200" y2="250" />
-                    <line id="door2" x1="200" y1="250" x2="250" y2="250" />
-                    <line x1="250" y1="250" x2="390" y2="250" />
-                </svg>
+                    <line id="BodyShaft" x1="200" y1="100" x2="200" y2="150" />
+                    <line id="LeftArm" x1="200" y1="120" x2="170" y2="140" />
+                    <line id="RightArm" x1="200" y1="120" x2="230" y2="140" />
+                    <line id="LeftLeg" x1="200" y1="150" x2="180" y2="190" />
+                    <line id="RightLeg" x1="200" y1="150" x2="220" y2="190" />
+                </g>
+                <line id="RodOne" x1="100" y1="250" x2="100" y2="20" />
+                <line id="RodTwo" x1="100" y1="20" x2="200" y2="20" />
+                <line id="Rope" x1="200" y1="20" x2="200" y2="60" />
+                <line x1="10" y1="250" x2="150" y2="250" />
+                <line id="door1" x1="150" y1="250" x2="200" y2="250" />
+                <line id="door2" x1="200" y1="250" x2="250" y2="250" />
+                <line x1="250" y1="250" x2="390" y2="250" />
+            </svg>
 
-                <div id="UI-Controls" class="UI-Controls">
-                    <!-- <a id="new-game" class="button z1shadow newGame-button">New Game!</a> -->
-                </div>
+            <div id="UI-Controls" class="UI-Controls">
+                <!-- <a id="new-game" class="button z1shadow newGame-button">New Game!</a> -->
+            </div>
 
-            </section>
-        </main>
+        </section>
+    </main>
 
-        <footer class="foot">
-            <p> Mini-Games Portal &copy; 2023</p>
-        </footer>
-    </div>
+    <footer class="foot">
+        <p> Mini-Games Portal &copy; 2023</p>
+    </footer>
+
     <script src="./js/hangman.js"></script>
     <script src="./js/index.js"></script>
 </body>

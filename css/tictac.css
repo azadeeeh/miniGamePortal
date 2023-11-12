@@ -1,13 +1,23 @@
 /* Existing container style */
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+main {
+    flex: 1;
+}
+
 .container1 {
   
     align-items: center;
     justify-content: center;
-    min-height: 10vh; /* 100% of the viewport height */
-    margin: 0;
-    padding: 0;
-    padding-bottom: 50px; /* Add padding to the bottom to ensure space for the footer */
-
+    min-height: 80%; /* 100% of the viewport height */
+    
+    
 }
 
 
@@ -69,6 +79,7 @@ td {
 
 
 
+
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
     40% { transform: translateY(-20px); }
@@ -96,12 +107,23 @@ td {
     font-size: 18px; /* Adjusted font size for the description */
 }
 
-.foot {
-    width: 100%;
-    padding: 10px 0;
+
+#turn-label{
     text-align: center;
-    box-sizing: border-box;
-    clear: both; /* Clear floats */
-    position: relative; /* Position relative to its normal position */
-    margin-top: 0px; /* Ensure there's space between the table and the footer */
+    margin:20px;
+}
+
+#winner-label{
+    text-align: center;
+    margin:20px;
+}
+
+
+/* Your existing styles for main, h1, gameBoard, game-description, etc. */
+
+/* Add media query for better responsiveness */
+@media (max-width: 768px) {
+    body {
+        display: block;
+    }
 }
