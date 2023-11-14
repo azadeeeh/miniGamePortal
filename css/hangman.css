@@ -5,6 +5,7 @@ main{
 }
 
 body {
+   
     display: flex;
     flex-direction: column;
     min-height: 100%;
@@ -13,12 +14,7 @@ body {
 
 /* Your existing styles for main, h1, gameBoard, game-description, etc. */
 
-/* Add media query for better responsiveness */
-@media (max-width: 768px) {
-    body {
-        display: block;
-    }
-}
+
 
 
 svg {
@@ -88,10 +84,15 @@ line {
     box-shadow: 0px 0px 5px 5px rgb(0, 0, 0, 0.25);
 }
 
-.gameDisplay {
+.HGameDisplay {
     align-items: center;
-    
-    
+    width:70%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    min-height: 80%;
+    margin:auto;
+    flex-direction: column;
 }
 
 
@@ -262,10 +263,12 @@ a {
 }
 
 .game-description {
+    width:600px;
     text-align: center;
     margin-top: 50px;  /* Adjusted for better spacing */
     font-family: Verdana, Geneva, Tahoma, sans-serif; /* Consistent font family */
     color: black; /* Consistent color */
+    
 }
 
 .game-description p:first-child {
@@ -277,4 +280,13 @@ a {
 .game-description p:last-child {
     font-size: 18px; /* Adjusted font size for the description */
 
+}
+
+
+
+/* Add media query for better responsiveness */
+@media (max-width: 768px) {
+    body {
+        display: block;
+    }
 }

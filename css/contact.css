@@ -5,64 +5,88 @@ body {
     margin: 0;
 }
 
+h2 {
+    text-align: center;
+}
+
 main {
     flex: 1;
 }
 
-
-
-
 .form-container {
     padding-left: 20px;
     padding-right: 20px;
-    max-width: 600px; /* Limit the width */
-    margin: 0 auto; /* Center the form container */
+    max-width: 100%;
+    /* Limit the width */
+    margin: 0 auto;
+    /* Center the form container */
     margin-bottom: 130px;
 }
 
+.form-grid {
+    align-items: center;
+    margin: 0 auto;
+}
+
 .form-group {
-    margin-bottom: 25px; /* Increased spacing between form groups */
+    margin-bottom: 25px;
+    /* Increased spacing between form groups */
+    width: 600px;
+    margin: 25px auto;
 }
 
 .form-input,
 .form-select,
 .form-textarea {
-    width: 100%;
-    padding: 12px 15px; /* Increased padding for comfort */
+    width: 90%;
+    padding: 12px 15px;
+    /* Increased padding for comfort */
     margin-top: 8px;
     border: 1px solid #ccc;
-    border-radius: 15px; /* More rounded corners */
-    transition: box-shadow 0.3s, border-color 0.3s; /* Smooth transition for focus effect */
+    border-radius: 15px;
+    /* More rounded corners */
+    transition: box-shadow 0.3s, border-color 0.3s;
+    /* Smooth transition for focus effect */
+    margin-bottom: 15px;
+}
+
+.form-select {
+    width: 95%;
 }
 
 .form-input:focus,
 .form-select:focus,
 .form-textarea:focus {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Subtle focus effect */
-    border-color: #888; /* Slight border color change on focus */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    /* Subtle focus effect */
+    border-color: #888;
+    /* Slight border color change on focus */
 }
 
 .form-button {
     background-color: #c0674a;
     color: white;
-    padding: 15px 25px; /* Increased padding for a larger button */
-    margin: 25px 0; /* Increased margin for spacing */
+    padding: 15px 25px;
+    /* Increased padding for a larger button */
+    /* Increased margin for spacing */
     border: none;
     cursor: pointer;
-    width: 100%;
-    border-radius: 20px; /* More rounded corners for the button */
-    transition: transform 0.3s; /* Smooth transition for hover effect */
+    width: 30%;
+    /* More rounded corners for the button */
+    border-radius: 20px;
+    margin-left: 50%;
+    /* Margin left according to the parent */
+    transform: translateX(-50%);
+    /* translate according to the element's width */
 }
 
 .form-button:hover {
     background-color: #c87f67;
-    transform: scale(1.05); /* Slight scale effect on hover */
 }
 
 .error {
     color: red;
 }
-
 
 @media (max-width: 768px) {
     body {
