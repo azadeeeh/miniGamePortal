@@ -41,35 +41,33 @@
         <button id="backButton" onclick="goBack()">
             &#8592
         </button>
-        <section id="myForm">
-            <div class="form-container">
-                <h2>Contact US</h2>
-                <form id="myForm" action="submit_here" method="post" class="form-grid">
-                    <div class="form-group">
-                        Name: <input id="name" name="name" type="text" required class="form-input"
-                            placeholder="enter your name" />
-                    </div>
+        <section id="myForm" class="form-container">
+            <h2>Contact US</h2>
+            <form id="myForm" action="submit_here" method="post" class="form-grid">
+                <div class="form-group">
+                    Name: <input id="name" name="name" type="text" required class="form-input"
+                        placeholder="enter your name" />
                     <span id="nameError" class="error"></span>
-                    <div class="form-group">
-                        Email Address: <input id="email" name="email_address" type="text" required class="form-input"
-                            placeholder="enter your email address" />
-                    </div>
+                </div>
+                <div class="form-group">
+                    Email Address: <input id="email" name="email_address" type="text" required class="form-input"
+                        placeholder="enter your email address" />
                     <span id="emailError" class="error"></span>
-                    <div class="form-group">
-                        Purpose of Contact
-                        <select name="Purpose of Contact" class="form-select">
-                            <option value="New Game Request">New Game Request</option>
-                            <option value="Reporting a Bug">Reporting a Bug</option>
-                        </select>
+                </div>
+                <div class="form-group">
+                    Purpose of Contact
+                    <select name="Purpose of Contact" class="form-select">
+                        <option value="New Game Request">New Game Request</option>
+                        <option value="Reporting a Bug">Reporting a Bug</option>
+                    </select>
 
-                    </div>
-                    <div class="form-group">
-                        Your Message: <textarea cols="50" name="Message" rows="4" class="form-textarea"
-                            placeholder="enter your message"></textarea>
-                    </div>
-                    <button type="submit" class="form-button">Submit</button>
-                </form>
-            </div>
+                </div>
+                <div class="form-group">
+                    Your Message: <textarea cols="50" name="Message" rows="4" class="form-textarea"
+                        placeholder="enter your message"></textarea>
+                </div>
+                <button type="submit" class="form-button">Submit</button>
+            </form>
             <p id="thankYouMessage"></p>
         </section>
     </main>

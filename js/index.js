@@ -1,6 +1,7 @@
 var list = document.getElementById("list");
 console.log(list);
-var listItems = list.getElementsByTagName("li");
+if (list != null)
+    var listItems = list.getElementsByTagName("li");
 console.log(listItems);
 
 var headButton = document.getElementById("headButton");
@@ -11,18 +12,17 @@ function goBack() {
     window.history.back();
 }
 
-
 //change the color of the nav bar items
-
-for (li of listItems) {
-    li.addEventListener("click", function () {
-        var x = document.querySelectorAll(".selected");
-        for (var j = 0; j < x.length; j++) {
-            x[j].classList.remove("selected");
-        }
-        this.classList.add("selected");
-    });
-}
+if (list != null)
+    for (li of listItems) {
+        li.addEventListener("click", function () {
+            var x = document.querySelectorAll(".selected");
+            for (var j = 0; j < x.length; j++) {
+                x[j].classList.remove("selected");
+            }
+            this.classList.add("selected");
+        });
+    }
 
 /*function button() {
     nav.style.display = (nav.style.display === 'block') ? 'none' : 'block';

@@ -1,14 +1,14 @@
-main{
-   
-    min-height: 80%;
-    flex:1;
+body {
+    /* display: flex; */
+    display: block;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-    margin: 0;
+main{
+    min-height: 80%;
+    flex:1;
 }
 
 /* Your existing styles for main, h1, gameBoard, game-description, etc. */
@@ -88,14 +88,15 @@ line {
     box-shadow: 0px 0px 5px 5px rgb(0, 0, 0, 0.25);
 }
 
-.gameDisplay {
-    align-items: center;
-    
-    
+.HGameDisplay {
+    width:70%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    min-height: 80%;
+    margin:auto;
+    flex-direction: column;
 }
-
-
-
 
 .categories {
     display: flex;
