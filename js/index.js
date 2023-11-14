@@ -24,12 +24,12 @@ for (li of listItems) {
     });
 }
 
-/*function button() {
+function button() {
     nav.style.display = (nav.style.display === 'block') ? 'none' : 'block';
     console.log("clicked");
 }
 
-headButton.addEventListener("click", button);*/
+headButton.addEventListener("click", button);
 
 // Change the color of the nav bar items
 /*

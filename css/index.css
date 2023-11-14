@@ -15,7 +15,7 @@ header {
     justify-content: space-between;
     align-items: center; 
     background: radial-gradient(circle,rgb(61, 69, 78),  rgb(84, 90, 96)); /*gives gradient effect to the background*/
-    
+    padding: 10px;
     border-radius: 10px;
     
 }
@@ -83,8 +83,29 @@ li:hover #game-dropdown-content {
     
 }
 
+#headButton{
+
+    display:none;
+    background-color: gray ; 
+    color: white;
+    top: 18px;
+    padding:13px;
+    border-radius: 10%;
+    border: none;
+    z-index: 1; 
+    text-align: center;
+    cursor: pointer;
+ 
+    
+    
+}
+
+
+
+
+
 #backButton {
-   
+    
     border: none;
     font-size: 30px;
     background-color: #c87f67; 
@@ -158,19 +179,7 @@ article img {
 
 
         
-/*#headButton{
 
-    display:none;
-    float:rigth;
-    background-color: gray;
-    top: 18px;
-    padding:13px;
-    border-radius: 50%;
-    z-index: 1; 
-    text-align: center;
-    
-    
-}*/
 
 
 
@@ -192,33 +201,59 @@ footer {
 
    .search-bar{
     display:none;
+
    }
-   /*header{
+   header{
     height:70px;
+    position: relative;
+
    }
 
    nav{
         display:none;
-   }
+        position: relative;
+        top: 75px;
+        left:10px;
+        border-radius: 10px;
+        background-color:gray;
+       
+      
+    }
 
    #headButton{
-    display:block;
-    float:right;
+        display: block;
+        position: absolute; /* Change this line to position: absolute; */
+        top: 10px; /* Adjust the top value to your preference */
+        right: 10px; 
+        border-radius: 10%;
+        margin-right: 10px;
+        margin: 10px;
+        padding: 10px;
+        background-color: gray; /* Set a background color for better visibility */
+        color: white;
+        cursor: pointer;
+     
+
+    
     
     }
+
+   
+
+   
 
     #game-dropdown-content{
         display:none;
         position: absolute;
         background-color: gray;
-        min-width: 160px;
+        min-width: 100px;
+        right:5px;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        top: 100px;
         padding:13px;
         border-radius: 10px;
         z-index: 1;  
         text-align: center;
-    }*/
+    }
 
 
 
